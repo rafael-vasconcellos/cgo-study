@@ -1,8 +1,14 @@
 package main
 
-import "my_module/message"
+import (
+	"cgo_study/dlls"
+	"cgo_study/message"
+	"fmt"
+)
 
 func main() {
 	message.Ping()
 	message.SayHello("Rafael")
+	title, err := dlls.GetActiveWindowTitle()
+	if err == nil { fmt.Println(title) }
 }
